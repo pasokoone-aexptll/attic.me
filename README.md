@@ -52,7 +52,7 @@ React UI
 
 ### story
 
-LP全体を管理する唯一の Source of Truth。
+LP全体を管理する唯一のマネージャー
 
 ```
 GSAP
@@ -133,6 +133,8 @@ CRT
 - Typography
 
 が同期して変化します。
+
+将来的に、`story`と`scene`はLP以外にも回チュートリアルやログイン画面、atticの世界観ページに再利用する可能性あり、feature/landingにlandingを切り離す予定
 
 ---
 
