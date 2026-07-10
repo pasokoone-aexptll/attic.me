@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# attic.me
 
-## Getting Started
+> まだ見たくない過去のための日記。
 
-First, run the development server:
+attic.me は、未来の自分へ向けて書くための、非公開の日記アプリです。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+SNSに投稿するほどでもない。
+ブログにするにはまとまっていない。
+でも消したくはない。
+
+そんな文章を置いておく、小さな屋根裏部屋です。
+
+---
+
+## Philosophy
+
+詳しくは `/屋根裏部屋/ちゃんめも.txt` を参照してください。
+
+attic は「人に見せるためのインターネット」ではなく、
+「自分のためのコンピューター」を目指しています。
+
+評価されなくてもいい。
+
+役に立たなくてもいい。
+
+誰にも届かなくてもいい。
+
+それでも残しておきたい文章があります。
+
+---
+
+## Repository
+
+```
+src/
+├── app/
+├── components/
+├── story/
+├── scene/
+├── hooks/
+├── assets/
+└── styles/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Next.js App Router
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### components
 
-## Learn More
+React UI
 
-To learn more about Next.js, take a look at the following resources:
+### story
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+LP全体を管理する唯一の Source of Truth。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+GSAP
+    ↓
+progress
+    ↓
+StoryManager
+    ↓
+Stage
+```
 
-## Deploy on Vercel
+Stageは
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 開始位置
+- 終了位置
+- 背景
+- キャラクター
+- 表示するComponent
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+を保持します。
+
+```
+GSAP → progress → StoryManager → Stage
+                                   ├─→ Component → DOM
+                                   └─→ Scene → Canvas
+```
+
+### scene
+
+Canvas描画。
+
+- Background
+- Character
+- Rain
+- CRT
+- Noise
+
+---
+
+## Landing Page
+
+LPは「読む」のではなく、
+
+**屋根裏部屋を探索する体験**
+
+を目指しています。
+
+一般的なUXとしてはかなり不親切ですが、
+その探索性自体を作品の一部として扱います。
+
+スクロールによって
+
+```
+階段
+↓
+
+踊り場
+
+↓
+
+屋根裏部屋
+
+↓
+
+冷蔵庫
+
+↓
+
+CRT
+```
+
+を移動していきます。
+
+各場所(Stage)に応じて
+
+- Canvas
+- UI
+- Typography
+
+が同期して変化します。
+
+---
+
+## Tech Stack
+
+### Framework
+
+- Next.js
+- React
+- TypeScript
+
+### Animation
+
+- GSAP
+- ScrollTrigger
+- Lenis
+
+### Rendering
+
+Canvas 2D
+
+BlenderからWebP連番を書き出し、
+CanvasでImage Sequenceとして描画します。
+
+### Assets
+
+- Blender
+- WebP Image Sequence
+- Git LFS
+
+---
+
+## Roadmap
+
+- [ ] StoryManager
+- [ ] Stage System
+- [ ] Canvas Renderer
+- [ ] FramePlayer
+- [ ] Blender Scene
+- [ ] Landing Page
+- [ ] attic App
+
