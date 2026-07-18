@@ -1,1 +1,7 @@
 docs/*.png filter=lfs diff=lfs merge=lfs -text
+
+blenderworkspace/**/*.blend filter=lfs diff=lfs merge=lfs -text
+blenderworkspace/**/*.mp4   filter=lfs diff=lfs merge=lfs -text
+blenderworkspace/**/*.mov   filter=lfs diff=lfs merge=lfs -text
+blenderworkspace/**/*.png   filter=lfs diff=lfs merge=lfs -text
+blenderworkspace/**/*.webp  filter=lfs diff=lfs merge=lfs -text
