@@ -1,4 +1,4 @@
-import { AtticCopy, CrtCopy, FridgeCopy, LandingCopy, StairsCopy } from "./StageCopy";
+import { AtticCopy, CrtCopy, FridgeCopy, LandingCopy, StairsCopy } from "./StageComponents";
 
 export const componentRegistry = {
   stairs: StairsCopy,

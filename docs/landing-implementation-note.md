@@ -1,32 +1,25 @@
-# Landing implementation note
+## ランディングページ実装ノート (Landing implementation note)
 
-## Purpose
+## 目的 (Purpose)
+ランディングページは、一般的な縦に長いページではなく、attic.me の世界を探索できるようなイントロダクションとして作成します。最初期の実装では、Blenderによる連番画像（イメージシーケンス）が完成するまでの間、Canvasで描画されたプレースホルダー（仮のシーン）を使用します。
 
-The landing page is an explorable introduction to attic.me, not a conventional
-long-form page. The first implementation uses Canvas-drawn placeholder scenes
-until Blender image sequences are available.
+## 実行時の境界・責務の分離 (Runtime boundary)
 
-## Runtime boundary
+* story/ の責務: ステージの順序、アニメーションの長さ（期間）、レジストリキーの管理のみを行います。
+* resolveStage の役割: スクロールの進行度（Progress）から特定のステージへとマッピングを行う「純粋関数（Side Effectのない処理）」のまま維持します。
+* engine/ の責務: 1つのCanvas（キャンバス）を管理します。ステージIDが変更されたときのみ、コントローラーの入れ替えを行います。
+* scene/ の責務: コントローラーを生成するファクトリ関数を管理します。将来、連番画像用のコントローラーを導入する際は、エンジンやストーリー側のコードを変更することなく、このプレースホルダー用のファクトリを置き換えるだけで対応できるようにします。
+* components/ の責務: 画面上にオーバーレイ表示するテキスト（コピー）や、ナビゲーション用の各種UI（ボタンなど）を管理します。
 
-- `story/` owns only stage order, duration, and registry keys.
-- `resolveStage` remains a pure mapping from scroll progress to a stage.
-- `engine/` owns one canvas and exchanges controllers only when the stage id
-  changes.
-- `scene/` owns the controller factories. A future image-sequence controller
-  replaces a placeholder factory without changing the engine or story.
-- `components/` owns the overlay copy and navigation affordances.
+## アセットの差し替えパス (Asset replacement path)
 
-## Asset replacement path
+各ステージは、固有の sceneKey (stairs, blueWorld, attic, fridge, crt) を保持しています。Blenderからエクスポートした画像が追加されたら、scene/sceneRegistry.ts にある該当キーのファクトリを、連番画像用のコントローラーへと差し替えます。
+この新しいコントローラーは、引き続き draw(ctx, input) と dispose() を実装する必要があり、現在のフレームを選択するために input.localProgress を使用する設計にします。
 
-Each stage keeps its `sceneKey` (`stairs`, `blueWorld`, `attic`, `fridge`,
-`crt`). When Blender exports are added, replace that key's factory in
-`scene/sceneRegistry.ts` with an image-sequence controller. The controller must
-continue to implement `draw(ctx, input)` and `dispose()` and should use
-`input.localProgress` to select its frame.
+## 最初の実稼働スライス / プロトタイプ (First playable slice)
 
-## First playable slice
+現在の開発スライス（マイルストーン）では、計画されている5つの場所（stairs、landing、attic、fridge、CRT）を網羅しています。
 
-The current slice covers the five planned places: stairs, landing, attic,
-fridge, and CRT. Scroll progress changes the resolved stage; stage changes
-replace scene controllers; progress within a stage only redraws the existing
-controller.
+* スクロールが進行すると: 解析されたステージ（Resolved Stage）が切り替わります。
+* ステージが切り替わると: 該当するシーンコントローラーが入れ替わります。
+* ステージ内の進行度（Progress）が変わるだけのとき: 既存のコントローラーの再描画のみが行われます。

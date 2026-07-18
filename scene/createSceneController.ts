@@ -74,6 +74,26 @@ export function createCrtSceneController(): SceneController {
       for (let y = 0; y < height; y += 4) {
         ctx.fillRect(0, y, width, 1);
       }
+      //ここにCRTの枠を描画する
+    },
+
+    dispose() {
+      // no-op overlay controller
+    },
+  };
+}
+
+
+export function createCharacterSceneController(): SceneController {
+  return {
+    draw(ctx: CanvasRenderingContext2D) {
+      const { width, height } = ctx.canvas;
+
+      ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
+      for (let y = 0; y < height; y += 4) {
+        ctx.fillRect(0, y, width, 1);
+      }
+      //ここにCRTの枠を描画する
     },
 
     dispose() {
