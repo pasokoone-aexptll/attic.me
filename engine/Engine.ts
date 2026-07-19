@@ -73,7 +73,7 @@ export class Engine {
     // Image sequences are quantized to frames. Keeping the existing bitmap is
     // both cheaper and necessary: clearing before a controller skips an
     // unchanged frame would leave the canvas empty.
-    const frameIndex = Math.floor((drawInput.localProgress ?? drawInput.progress) * 180);
+    const frameIndex = Math.floor((drawInput.localProgress ?? drawInput.progress) * 720);
     const frameSignature = `${this.currentResolvedStage.stage.id}:${frameIndex}`;
     if (frameSignature === this.lastFrameSignature) {
       return;

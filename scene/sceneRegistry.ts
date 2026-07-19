@@ -1,14 +1,8 @@
-import { createBackgroundSceneController, createCrtSceneController } from "./createSceneController";
+import { createImageSequenceSceneController, createBackgroundSceneController, createCrtSceneController } from "./createSceneController";
 import type { SceneRegistry } from "./types";
 
 export const sceneRegistry = {
-  stairs: () =>
-    createBackgroundSceneController({
-      fillStyle: "#101318",
-      accentStyle: "#5e7cff",
-      label: "stairs",
-      mood: "stairs",
-    }),
+  stairs: () => createImageSequenceSceneController("/frames/stairs", 180),
   blueWorld: () =>
     createBackgroundSceneController({
       fillStyle: "#0d1b2a",

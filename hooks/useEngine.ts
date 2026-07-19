@@ -49,6 +49,26 @@ export function useEngine(story: StoryScript, canvasRef: RefObject<HTMLCanvasEle
     engineRef.current?.renderFrame();
   }, [progress]);
 
+  useEffect(() => {
+    if (!engineRef.current) {
+      return;
+    }
+
+    // 画像ロード完了を検出するため、複数フレーム描画をトライ
+    let frameCount = 0;
+    const maxFrames = 30; // 約500ms at 60fps
+
+    const tryRender = () => {
+      engineRef.current?.renderFrame();
+      frameCount++;
+      if (frameCount < maxFrames) {
+        requestAnimationFrame(tryRender);
+      }
+    };
+
+    requestAnimationFrame(tryRender);
+  }, []);
+
   return {
     progress,
     resolvedStage,
