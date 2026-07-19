@@ -8,9 +8,9 @@ import { fridge } from "./stages/fridge";
 import { stairs } from "./stages/stairs";
 
 export default storyFactory(
-  stage(blueWorld, { length: 2 }),
   stage(stairs, { length: 3 }),
-  stage(attic, { length: 6 }),
+  stage(blueWorld, { length: 2 }),
+  stage(attic, { length: 2 }),
   stage(fridge, { length: 2 }),
-  stage(crt, { length: 4 }),
+  stage(crt, { length: 3 }),
 );
