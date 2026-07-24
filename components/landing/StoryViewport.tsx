@@ -4,6 +4,7 @@ import { useRef } from "react";
 import type { StoryScript } from "@/story/types";
 import { componentRegistry } from "./componentRegistry";
 import { useEngine } from "@/hooks/useEngine";
+import Image from "next/image";
 
 export function StoryViewport({ story }: { story: StoryScript }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -24,8 +25,6 @@ export function StoryViewport({ story }: { story: StoryScript }) {
       <section className="story-frame" aria-label="attic.me を探索する">
         <canvas ref={canvasRef} className="story-canvas" aria-hidden="true" />
         <header className="story-header">
-          <span>attic.me</span>
-          <span>PRIVATE DIARY / 2026</span>
         </header>
         <aside className="story-index" aria-label="現在地">
           <span>{stageNumber}</span>
