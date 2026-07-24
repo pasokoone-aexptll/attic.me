@@ -3,26 +3,18 @@ import type { SceneRegistry } from "./types";
 
 export const sceneRegistry = {
   stairs: () => createImageSequenceSceneController("/frames/stairs", 180),
-  blueWorld: () =>
-    createBackgroundSceneController({
-      fillStyle: "#0d1b2a",
-      accentStyle: "#7db0ff",
-      label: "blueWorld",
-      mood: "landing",
-    }),
-  attic: () =>
-    createBackgroundSceneController({
-      fillStyle: "#1b1714",
-      accentStyle: "#c78f5e",
-      label: "attic",
-      mood: "attic",
-    }),
-  fridge: () =>
-    createBackgroundSceneController({
-      fillStyle: "#0f1f1a",
-      accentStyle: "#77d6b2",
-      label: "fridge",
-      mood: "fridge",
-    }),
+  blueCharacter: () => createImageSequenceSceneController("/frames/blue", 50),
+  fridgeCharacter: () => createImageSequenceSceneController("/frames/fridge", 142),
+  metro: () => createImageSequenceSceneController("/frames/metro", 141),
+  station: () => createImageSequenceSceneController("/frames/station", 112),
+  kotatsu: () => createImageSequenceSceneController("/frames/kotatsu", 178),
   crt: () => createCrtSceneController(),
+  blueSurface: () => createBackgroundSceneController({
+    fillStyle: "#0F4BFF",
+    label: "blueSurface",
+  }),
+  fridgeSurface: () => createBackgroundSceneController({
+    fillStyle: "#0F4BFF",
+    label: "blueSurface",
+  }),
 } satisfies SceneRegistry;

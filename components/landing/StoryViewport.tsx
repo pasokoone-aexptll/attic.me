@@ -13,7 +13,14 @@ export function StoryViewport({ story }: { story: StoryScript }) {
   const stageNumber = String(resolvedStage.stageIndex + 1).padStart(2, "0");
 
   return (
-    <main id="top" className="story-viewport">
+    <div
+      className="story-viewport"
+      style={
+        {
+          "--story-scroll": 3000,
+        } as React.CSSProperties
+      }
+    >
       <section className="story-frame" aria-label="attic.me を探索する">
         <canvas ref={canvasRef} className="story-canvas" aria-hidden="true" />
         <header className="story-header">
@@ -33,6 +40,6 @@ export function StoryViewport({ story }: { story: StoryScript }) {
           <span style={{ transform: `scaleX(${resolvedStage.globalProgress})` }} />
         </div>
       </section>
-    </main>
+    </div >
   );
 }

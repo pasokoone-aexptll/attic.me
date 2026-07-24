@@ -69,8 +69,8 @@ export function StairsCopy({ localProgress }: CopyProps) {
       <Image 
         src="/logo.svg" 
         alt="attic.me" 
-        width={270} 
-        height={270} 
+        width={420} 
+        height={420} 
         className="m-auto target-logo opacity-0" 
         style={{ height: "auto" }}
         priority 
@@ -78,7 +78,7 @@ export function StairsCopy({ localProgress }: CopyProps) {
       />
       
       <h1 className="font-shippori scale-x-[0.55] origin-center text-[3.5rem] font-bold pb-16 opacity-0">
-        まだ来ていない誰かのための日記
+        終日・まだ来ていない誰に宛てた記録
       </h1>
       
       <div className="leading-9 text-[#ffffffbc] font-[0.8rem] copy-text">
