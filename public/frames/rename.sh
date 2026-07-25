@@ -17,4 +17,4 @@ reset_sequence() {
     done
 }
 
-reset_sequence "fridge"
+reset_sequence "footer"

@@ -8,6 +8,7 @@ import { fridge } from "./stages/fridge";
 import { metro } from "./stages/metro";
 import { station } from "./stages/station";
 import { kotatsu } from "./stages/kotatsu";
+import { footer } from "./stages/footer";
 
 export default storyFactory(
   stage(stairs, { length: 5 }),
@@ -16,4 +17,5 @@ export default storyFactory(
   stage(metro, { length: 6}),
   stage(station, { length: 4 }),
   stage(kotatsu, { length: 4 }),
+  stage(footer, { length: 2 }),
 );

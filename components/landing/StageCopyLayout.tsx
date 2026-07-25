@@ -18,6 +18,7 @@ export type StageCopyLayoutProps = {
   contentClassName?: string;
   isCentered?: boolean;
   showRightMenu?: boolean;
+  disableFadeOut?: boolean;
 };
 
 function RightMenu() {
@@ -57,6 +58,7 @@ export function StageCopyLayout({
   contentClassName = "",
   isCentered = false,
   showRightMenu = true,
+  disableFadeOut = false,
 }: StageCopyLayoutProps) {
   const { scale, DESIGN_WIDTH, DESIGN_HEIGHT } = useViewportScale();
   const contentRef = useRef<HTMLDivElement>(null);
@@ -87,13 +89,13 @@ export function StageCopyLayout({
     if (localProgress < 0.1) {
       fadeInTl.current.reverse();
       fadeOutTl.current.pause(0);
-    } else if (localProgress < 0.9) {
+    } else if (localProgress < 0.9 || disableFadeOut) {
       fadeInTl.current.play();
       fadeOutTl.current.reverse();
     } else {
       fadeOutTl.current.play();
     }
-  }, [localProgress]);
+  }, [localProgress, disableFadeOut]);
 
   return (
     <div className={`relative w-screen h-dvh overflow-hidden flex items-center ${wrapperClassName}`.trim()}>

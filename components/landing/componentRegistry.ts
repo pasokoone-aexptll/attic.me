@@ -4,6 +4,7 @@ import { FridgeCopy } from "./copy/FridgeCopy";
 import { MetroCopy } from "./copy/MetroCopy";
 import { StationCopy } from "./copy/StationCopy";
 import { KotatsuCopy } from "./copy/KotatsuCopy";
+import { Footer } from "./copy/Footer";
 
 export const componentRegistry = {
   stairs: StairsCopy,
@@ -12,4 +13,5 @@ export const componentRegistry = {
   station: StationCopy,
   metro: MetroCopy,
   kotatsu: KotatsuCopy,
+  footer: Footer,
 } as const;

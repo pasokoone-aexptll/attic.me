@@ -8,6 +8,7 @@ export const sceneRegistry = {
   metro: () => createImageSequenceSceneController("/frames/metro", 141),
   station: () => createImageSequenceSceneController("/frames/station", 112),
   kotatsu: () => createImageSequenceSceneController("/frames/kotatsu", 178),
+  footer: () => createImageSequenceSceneController("/frames/footer", 35),
   crt: () => createCrtSceneController(),
   blueSurface: () => createBackgroundSceneController({
     fillStyle: "#0F4BFF",
