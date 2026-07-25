@@ -1,9 +1,10 @@
-import { AtticCopy, CrtCopy, FridgeCopy, LandingCopy, StairsCopy } from "./StageComponents";
+import { StairsCopy, BlueCopy, FridgeCopy, MetroCopy, StationCopy, KotatsuCopy } from "./StageComponents";
 
 export const componentRegistry = {
   stairs: StairsCopy,
-  landing: LandingCopy,
-  attic: AtticCopy,
+  blue: BlueCopy,
   fridge: FridgeCopy,
-  crt: CrtCopy,
+  station: StationCopy,
+  metro: MetroCopy,
+  kotatsu: KotatsuCopy,
 } as const;

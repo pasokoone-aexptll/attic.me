@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: #0c0b0c; font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
 .story-viewport { height: calc(var(--story-scroll) * 1vh); }
 .story-frame { position: sticky; top: 0; height: 100svh; overflow: hidden; background: #111; }
-.story-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.story-canvas { position: absolute; inset: 0; width: 100%; height: 100%; filter: brightness(0.75); }
 .story-header, .story-index, .story-scroll-hint, .story-copy { position: absolute; z-index: 1; }
 .story-header { top: 24px; left: 28px; right: 28px; display: flex; justify-content: space-between; color: rgba(255,255,255,.74); font: 10px/1 ui-monospace, monospace; }
 .story-index { right: 40px; top: 45%; display: grid; gap: 10px; place-items: center; color: rgba(255,255,255,.7); font: 10px/1 ui-monospace, monospace; }
