@@ -4,7 +4,6 @@ import { useRef } from "react";
 import type { StoryScript } from "@/story/types";
 import { componentRegistry } from "./componentRegistry";
 import { useEngine } from "@/hooks/useEngine";
-import Image from "next/image";
 
 export function StoryViewport({ story }: { story: StoryScript }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

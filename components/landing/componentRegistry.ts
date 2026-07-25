@@ -1,4 +1,9 @@
-import { StairsCopy, BlueCopy, FridgeCopy, MetroCopy, StationCopy, KotatsuCopy } from "./StageComponents";
+import { StairsCopy } from "./copy/StairsCopy";
+import { BlueCopy } from "./copy/BlueCopy";
+import { FridgeCopy } from "./copy/FridgeCopy";
+import { MetroCopy } from "./copy/MetroCopy";
+import { StationCopy } from "./copy/StationCopy";
+import { KotatsuCopy } from "./copy/KotatsuCopy";
 
 export const componentRegistry = {
   stairs: StairsCopy,
