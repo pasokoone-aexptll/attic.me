@@ -18,11 +18,11 @@ export function StairsCopy({ localProgress }: CopyProps) {
       </h1>
 
       <div className="leading-8 text-[#ffffffbc] text-[1.2rem] copy-text">
-        <p className="opacity-0">自分の書いた文章を見られたくない相手がいる。</p>
-        <p className="opacity-0">それは珍しいことじゃない。</p>
-        <p className="opacity-0">ここは、誰にも見せなくてもいい小さな屋根裏部屋です。</p>
-        <p className="opacity-0">まだ整理されていない考え事を書いたり</p>
-        <p className="opacity-0">文章を書き散らして置けます。</p>
+        <p className="opacity-0">当てつけのように書いた文があり、</p>
+        <p className="opacity-0">君にはその文をみられたくないと思う奴がいる</p>
+        <p className="opacity-0">それは戦争を起こす人類ほど珍しいものじゃない</p>
+        <p className="opacity-0">遠い未来にあててまだ整理されていない言葉を書き散らしておくのはどうだろうか？</p>
+        <p className="opacity-0">そしてどうやらこの屋根裏部屋は書き散らしておくのに良い場所だ</p>
 
         <ProgressPercent localProgress={localProgress} label="階段を上がる" />
       </div>

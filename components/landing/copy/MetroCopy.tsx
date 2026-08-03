@@ -14,8 +14,7 @@ export function MetroCopy({ localProgress }: CopyProps) {
       <Image className="target-image opacity-0" src="/siki.png" alt="x_i^{t+1} =\text{normalize}\left(\alpha x_i^t* (1-\alpha)\sum_{j\in N(i)} P_i x_j^t\right)" width={375} height={45} priority />
 
       <h1 className="font-shippori scale-x-[0.55] origin-left text-[3.5rem] opacity-0 mb-8">
-        自分とそうじゃないの区別は過去の傷の深さと<br />
-        比例してる
+        自分とそうじゃないの区別は過去の傷の深さと比例してる
       </h1>
 
       <div className="leading-9 text-[#ffffffbc] text-[1.15rem] copy-text">

@@ -18,15 +18,16 @@ export function BlueCopy({ localProgress }: CopyProps) {
       </h1>
 
       <div className="leading-10 text-[#ffffffbc] text-[1.25rem] copy-text">
-        <p className="opacity-0">書けなかった言葉を書くために</p>
-        <p className="opacity-0">今のインターネットは拡散に最適化されています</p>
-        <p className="opacity-0">いいね、フォロー、レコメンド、アルゴリズム</p>
-        <p className="opacity-0">それらは素晴らしい仕組みです</p>
-        <p className="opacity-0">けれど、全ての文章が今この瞬間に評価される必要はありません</p>
-        <p className="opacity-0">理解される言葉がまだ存在しない考えもあります</p>
-        <p className="opacity-0">十年後に意味を持つかもしれない文章があります</p>
-        <p className="opacity-0">誰か一人の人生だけを支える文章があります</p>
-        <p className="opacity-0">attic.meはソーシャルファイアーウォールです</p>
+        <p className="opacity-0">インターネットは拡散のために最適化されている</p>
+        <p className="opacity-0">いいね、フォロー、レコメンド・アルゴリズム</p>
+        <p className="opacity-0">インターネットは廻る、君を連れて廻る</p>
+        <p className="opacity-0">じゃあインターネットの経済に評価されない君の言葉はどこへゆく？</p>
+        <p className="opacity-0">すべての文章はこの瞬間に評価されるべきなのか</p>
+        <p className="opacity-0">我々の魂は潮時だと評価され続けられるのだろうか？</p>
+        <p className="opacity-0">世が耽る頃に、あなたの言葉がふとこだまする</p>
+        <p className="opacity-0">今はその時じゃなくて、じゃあそれまであなたの言葉はどこへ？</p>
+        <p className="opacity-0">attic.meは現行のインターネット経済から切り離された漂流する逃避用ネット広域です</p>
+
 
         <ProgressPercent localProgress={localProgress} label="穴に落ちる..." />
 

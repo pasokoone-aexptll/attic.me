@@ -28,8 +28,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 
 export const metadata: Metadata = {
-  title: "attic.me — まだ見たくない過去のための日記。",
-  description: "未来の自分へ向けて書く、非公開の日記アプリ。",
+  title: "attic.me",
+  description: "終日・まだ来ていない誰に宛てた記録",
 };
 
 export default function RootLayout({

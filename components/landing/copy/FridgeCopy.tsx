@@ -24,7 +24,7 @@ export function FridgeCopy({ localProgress }: CopyProps) {
         </h1>
 
         <div className="leading-8 text-[#ffffffbc] text-[1.15rem] copy-text">
-          <p className="opacity-0">保存形式であり、公開範囲を選べるあなたの領域です</p>
+          <p className="opacity-0">保存形式であり、公開範囲を選べるあなたの領域</p>
           <p className="opacity-0">あなたは、あなたの言葉を受け取る準備ができていない相手とすれ違わずに済みます</p>
           <p className="opacity-0">未来の読者へ あなたが書いた文章は、</p>
           <p className="opacity-0">いま誰にも必要とされていないかもしれません</p>
@@ -36,6 +36,8 @@ export function FridgeCopy({ localProgress }: CopyProps) {
           <p className="opacity-0">attic は、見られたくない相手を「今の人類」に設定できます</p>
           <p className="opacity-0">理解される言葉がまだない考えをその時まで</p>
           <p className="opacity-0">保存するための保存器になってくれます</p>
+
+          <p className="opacity-0">太陽のように眩しい自意識の直射日光が、人間を焼き尽くしている</p>
 
           <ProgressPercent localProgress={localProgress} label="冷蔵庫を探す" />
         </div>

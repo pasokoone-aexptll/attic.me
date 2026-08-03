@@ -22,13 +22,12 @@ export function StoryViewport({ story }: { story: StoryScript }) {
       }
     >
       <section className="story-frame" aria-label="attic.me を探索する">
-        <canvas ref={canvasRef} className="story-canvas" aria-hidden="true" />
         <header className="story-header">
         </header>
         <aside className="story-index" aria-label="現在地">
           <span>{stageNumber}</span>
           <i />
-          <span>05</span>
+          <span>07</span>
         </aside>
         <div className="story-copy" key={resolvedStage.stage.id}>
           <Component localProgress={resolvedStage.localProgress} />
@@ -37,6 +36,7 @@ export function StoryViewport({ story }: { story: StoryScript }) {
         <div className="story-progress" aria-hidden="true">
           <span style={{ transform: `scaleX(${resolvedStage.globalProgress})` }} />
         </div>
+        <canvas ref={canvasRef} className="story-canvas" aria-hidden="true" />
       </section>
     </div >
   );
